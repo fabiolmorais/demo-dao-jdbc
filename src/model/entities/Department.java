@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Department implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer id;
     private String name;
 
@@ -35,12 +36,12 @@ public class Department implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Department that)) return false;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName());
+        return Objects.equals(getId(), that.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName());
+        return Objects.hash(getId());
     }
 
     @Override
